@@ -5,7 +5,7 @@
 
 	<groupId>com.aeert</groupId>
 	<artifactId>mlock</artifactId>
-	<version>2.2.0.RELEASE</version>
+	<version>2.3.0.RELEASE</version>
 	<packaging>jar</packaging>
 	<name>mlock</name>
 	<url>https://github.com/mayunkun/mlock</url>

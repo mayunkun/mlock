@@ -52,10 +52,12 @@ public class RedisLockAspect {
             }).onFailure((e) -> {
                 log.error(e.getMessage());
             }).andFinally(() -> {
-                try {
-                    lock.unlock();
-                } catch (Exception e) {
-                    log.error("解锁出错:{}", e.getMessage());
+                if(mLock.automatic()){
+                    try {
+                        lock.unlock();
+                    } catch (Exception e) {
+                        log.error("解锁出错:{}", e.getMessage());
+                    }
                 }
             }).get();
         }).onFailure((e) -> log.error("Redis lock exception :{}", e.getLocalizedMessage())).get();

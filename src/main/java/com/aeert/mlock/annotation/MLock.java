@@ -33,4 +33,9 @@ public @interface MLock {
      **/
     long expires() default 60000L;
 
+    /**
+     * 请求结束是否自动释放
+     **/
+    boolean automatic() default false;
+
 }
